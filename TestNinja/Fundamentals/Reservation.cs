@@ -4,9 +4,18 @@
     {
         public User MadeBy { get; set; }
 
+        public Reservation()
+        {
+            
+        }
+
         public bool CanBeCancelledBy(User user)
         {
-            return (user.IsAdmin || MadeBy == user);
+            if (user == MadeBy) return true;
+
+            if ((user!=null) && (user.IsAdmin)) return true;
+
+            return false;
         }
         
     }
