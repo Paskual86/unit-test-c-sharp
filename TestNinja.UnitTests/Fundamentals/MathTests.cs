@@ -7,52 +7,30 @@ namespace TestNinja.UnitTests.Fundamentals
     public class MathTests
     {
         [Test]
-        public void Add_WhenIsExecuted_ReturnTheValue() 
+        [TestCase(1,2,3)]
+        [Ignore("Porque si!")]
+        public void Add_WhenExecuted_ResultSumValues(int a, int b, int expectedResult) 
         {
             //Arrange
             var math = new Math();
             //Act
-            var result = math.Add(1, 2);
+            var result = math.Add(a, b);
             //Assert
-            Assert.That(result, Is.EqualTo(3));
+            Assert.That(result, Is.EqualTo(expectedResult));
         }
 
         [Test]
-        public void Max_FirstArgumentIsGreater_ReturnTheFirstArgument()
+        [TestCase(2,1,2)]
+        [TestCase(1, 2, 2)]
+        [TestCase(1, 1, 1)]
+        public void Max_WhenExecuted_ResultTheGreaterArgument(int a, int b, int expectedResult)
         {
             // Arrange
-            int a = 2, b = 1;
             var math = new Math();
             // Act
             var result = math.Max(a, b);
             // Assert
-            Assert.That(result, Is.EqualTo(a));
-        }
-
-        [Test]
-        public void Max_SecondArgumentIsGreater_ReturnTheSecondArgument()
-        {
-            // Arrange
-            int a = 1, b = 2;
-            var math = new Math();
-            // Act
-            var result = math.Max(a, b);
-            // Assert
-            Assert.That(result, Is.EqualTo(b));
-        }
-
-        [Test]
-        public void Max_ArgumentsAreEqual_ReturnTheSameArgument()
-        {
-            // Arrange
-            int c = 3;
-            var math = new Math();
-            int b;
-            int a = b = c;
-            // Act
-            var result = math.Max(a, b);
-            // Assert
-            Assert.That(result, Is.EqualTo(c));
+            Assert.That(result, Is.EqualTo(expectedResult));
         }
     }
 }
