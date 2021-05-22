@@ -27,7 +27,7 @@ namespace TestNinja.UnitTests.Fundamentals
         [TestCase(66,0)]
         [TestCase(65*2, 65/5)]
         [TestCase(65 * 3, (65*2)/5)]
-        public void CalculateDemeritPoints_SpeedGreaterThanLimit_ResultDemeterPoints(int speed, int expectedValue)
+        public void CalculateDemeritPoints_WhenIsCalled_ResultDemeterPoints(int speed, int expectedValue)
         {
             var demerit = new TestNinja.Fundamentals.DemeritPointsCalculator();
             var result = demerit.CalculateDemeritPoints(speed);
