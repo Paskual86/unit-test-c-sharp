@@ -33,7 +33,6 @@ namespace TestNinja.Fundamentals
         {
             if (_list.Count == 0)
                 throw new InvalidOperationException();
-
             return _list[_list.Count - 1];
         }
     }
