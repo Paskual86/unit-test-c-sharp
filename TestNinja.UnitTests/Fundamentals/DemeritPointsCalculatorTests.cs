@@ -9,7 +9,7 @@ namespace TestNinja.UnitTests.Fundamentals
         [Test]
         [TestCase(-1)] // Min value is 0
         [TestCase(301)] // Max value is 300
-        public void CalculateDemeritPoints_SpeedInvalidValues_ResultException(int speed)
+        public void CalculateDemeritPoints_SpeedIsOutOfRange_ResultException(int speed)
         {
             var demerit = new TestNinja.Fundamentals.DemeritPointsCalculator();
             Assert.Throws<ArgumentOutOfRangeException>(() => demerit.CalculateDemeritPoints(speed));
