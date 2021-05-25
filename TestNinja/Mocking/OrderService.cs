@@ -12,9 +12,7 @@
         public int PlaceOrder(Order order)
         {
             var orderId = _storage.Store(order);
-            
             // Some other work
-
             return orderId; 
         }
     }
